@@ -8,7 +8,7 @@
         <img src="<%= ru.avatar_url %>" class= "img-responsive" alt="" />
       </div>
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <h5><%= link_to ru.name.downcase, ru.html_url, class: 'users_name' %></h5>
+        <h5><%= link_to ru.login.downcase, ru.html_url, class: 'users_name' %></h5>
         <ul class="users_info">
           <li>joined on <%= ru.created_at.to_date.to_s %></li>
           <li><%= ru.public_repos %> public repos</li>

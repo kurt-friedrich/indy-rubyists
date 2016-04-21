@@ -1,8 +1,9 @@
 class RubyistsController < ApplicationController
 
   def index
-    @rubyists = Octokit.search_users('location:Indianapolis language:Ruby', sort: 'joined', order: :asc)
-    @ruby_users = @rubyists.items.map { |u| Octokit.user(u[:id]) }
+    options = { per_page:100, order:"asc", sort:"joined" }
+    rubyists = Octokit.search_users('location:Indianapolis language:Ruby', options)
+    @ruby_users = rubyists.items.map { |u| Octokit.user(u[:id]) }
   end
 
   def show
