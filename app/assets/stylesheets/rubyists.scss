@@ -1,0 +1,22 @@
+// Place all the styles related to the rubyists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users_name {
+  color: white;
+}
+
+.user-row {
+  margin: .5em;
+  background-color: #333;
+  color: #e6b3ff
+}
+
+.img-col {
+  padding-left: 0 !important;
+}
+
+.users_info {
+  list-style-type:none;
+  -webkit-padding-start: 0;
+}
