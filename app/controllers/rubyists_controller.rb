@@ -1,7 +1,8 @@
 class RubyistsController < ApplicationController
 
   def index
-    @users = github.search_users('location:Indianapolis language:Ruby')
+    @rubyists = Octokit.search_users('location:Indianapolis language:Ruby', sort: 'joined', order: :asc)
+    @ruby_users = @rubyists.items.map { |u| Octokit.user(u[:id]) }
   end
 
   def show
@@ -9,8 +10,5 @@ class RubyistsController < ApplicationController
 
   private
 
-  def github
-    @github ||= Octokit::Client.new(access_token: ENV['github_access_token'])
-  end
 
 end
